@@ -1,4 +1,4 @@
-import React, { useState, useEffect, MouseEvent } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import MontyImage from "../assets/Montyjha.jpeg";
 import {
@@ -36,7 +36,7 @@ const PortfolioHomepage = () => {
       });
     }, 150);
 
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleMouseMove = (e: globalThis.MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
     window.addEventListener("mousemove", handleMouseMove);

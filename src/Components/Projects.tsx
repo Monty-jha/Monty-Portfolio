@@ -2,6 +2,24 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Play, Pause, Upload, ExternalLink, Github, Calendar, Tag, Award, Building, Users, Zap, Globe, ShoppingCart, Pill, Briefcase, User } from 'lucide-react';
 
+interface ProjectType {
+  id: number;
+  title: string;
+  description: string;
+  detailedDescription: string;
+  technologies: string[];
+  category: string;
+  date: string;
+  githubUrl: string;
+  liveUrl: string;
+  videoUrl: string;
+  posterUrl: string;
+  icon: any;
+  color: string;
+  achievements: string[];
+  clientImpact: string;
+}
+
 const ProjectsPage = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
