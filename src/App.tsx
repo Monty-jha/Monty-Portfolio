@@ -6,6 +6,7 @@ import AboutPage from './Components/About';
 import ServicesPage from './Components/Services';
 import ContactPage from './Components/Contact';
 import ProjectsPage from './Components/Projects';
+import Navbar from './Components/Navbar';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -17,10 +18,12 @@ function ScrollToTop() {
   return null;
 }
 
-function App() {
+function AppContent() {
+  const { pathname } = useLocation();
   return (
-    <Router>
+    <>
       <ScrollToTop />
+      {pathname !== '/' && <Navbar />}
       <Routes>
         <Route path="/" element={<PortfolioHomepage />} />
         <Route path="/about" element={<AboutPage />} />
@@ -28,6 +31,14 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/products" element={<ProjectsPage />} />
       </Routes>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }

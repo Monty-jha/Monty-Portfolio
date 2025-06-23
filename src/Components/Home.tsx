@@ -228,24 +228,19 @@ const PortfolioHomepage = () => {
           }}
         ></div>
 
-        {/* Navigation */}
+        {/* Home Page Original Navbar */}
         <nav className="relative z-20 flex justify-between items-center p-4 md:p-6 backdrop-blur-sm">
           <div
             className={`text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent transition-all duration-1000 ${
-              isVisible
-                ? "translate-y-0 opacity-100"
-                : "-translate-y-10 opacity-0"
+              isVisible ? "translate-y-0 opacity-100" : "-translate-y-10 opacity-0"
             }`}
           >
             Monty Jha
           </div>
-
           {/* Desktop Navigation */}
           <div
             className={`hidden md:flex space-x-4 transition-all duration-1000 delay-300 ${
-              isVisible
-                ? "translate-y-0 opacity-100"
-                : "-translate-y-10 opacity-0"
+              isVisible ? "translate-y-0 opacity-100" : "-translate-y-10 opacity-0"
             }`}
           >
             {navItems.map((item) => (
@@ -265,14 +260,11 @@ const PortfolioHomepage = () => {
               </button>
             ))}
           </div>
-
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`md:hidden p-3 rounded-xl bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-400/30 hover:border-blue-400/80 transition-all duration-300 backdrop-blur-sm ${
-              isVisible
-                ? "translate-y-0 opacity-100"
-                : "-translate-y-10 opacity-0"
+              isVisible ? "translate-y-0 opacity-100" : "-translate-y-10 opacity-0"
             }`}
           >
             {isMobileMenuOpen ? (
@@ -282,7 +274,6 @@ const PortfolioHomepage = () => {
             )}
           </button>
         </nav>
-
         {/* Mobile Navigation Menu */}
         {isMobileMenuOpen && (
           <div className="fixed inset-0 z-30 bg-gray-900/95 backdrop-blur-lg md:hidden">
@@ -298,11 +289,11 @@ const PortfolioHomepage = () => {
                   <span className="relative z-10">{item.name}</span>
                 </button>
               ))}
-
               {/* Close button */}
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="mt-8 p-4 rounded-full bg-red-500/20 border border-red-400/30 hover:border-red-400/80 transition-all duration-300"
+                title="Close menu"
               >
                 <X className="w-6 h-6 text-red-300" />
               </button>
@@ -310,182 +301,185 @@ const PortfolioHomepage = () => {
           </div>
         )}
 
-        {/* Hero Section */}
-        <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between px-4 md:px-6 lg:px-20 py-8">
-          {/* Profile Image Section */}
-          <div
-            className={`w-full lg:w-1/2 flex justify-center lg:justify-start mb-8 lg:mb-0 order-1 lg:order-2 transition-all duration-1000 delay-600 ${
-              isVisible
-                ? "translate-y-0 opacity-100"
-                : "-translate-y-20 opacity-0"
-            }`}
-          >
-            <div className="lg:-translate-y-32">
-              <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-cyan-400 to-blue-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+        {/* Main Content */}
+        <div className="relative z-10 container mx-auto px-2 sm:px-4 min-h-screen flex flex-col justify-center items-center pt-24 sm:pt-28 md:pt-32 lg:pt-0 overflow-x-hidden">
+          {/* Hero Section */}
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between w-full gap-8 md:gap-12 lg:gap-20">
+            {/* Profile Image Section */}
+            <div
+              className={`w-full lg:w-1/2 flex justify-center lg:justify-start mb-8 lg:mb-0 order-1 lg:order-2 transition-all duration-1000 delay-600 ${
+                isVisible
+                  ? "translate-y-0 opacity-100"
+                  : "-translate-y-20 opacity-0"
+              }`}
+            >
+              <div className="lg:-translate-y-32">
+                <div className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-cyan-400 to-blue-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
 
-                <div className="relative w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden bg-gradient-to-br from-blue-400/20 to-cyan-400/20 backdrop-blur-sm border border-blue-400/30">
-                  <img
-                    src={MontyImage}
-                    alt="Monty Jha - Web Developer"
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
+                  <div className="relative w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden bg-gradient-to-br from-blue-400/20 to-cyan-400/20 backdrop-blur-sm border border-blue-400/30 mx-auto">
+                    <img
+                      src={MontyImage}
+                      alt="Monty Jha - Web Developer"
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
 
-                  <div className="absolute -top-2 -right-2 p-2 md:p-3 bg-blue-500/30 rounded-lg backdrop-blur-sm animate-pulse border border-blue-400/50">
-                    <Code className="w-4 h-4 md:w-5 md:h-5 text-blue-300" />
+                    <div className="absolute -top-2 -right-2 p-2 md:p-3 bg-blue-500/30 rounded-lg backdrop-blur-sm animate-pulse border border-blue-400/50">
+                      <Code className="w-4 h-4 md:w-5 md:h-5 text-blue-300" />
+                    </div>
+                    <div className="absolute -bottom-2 -left-2 p-2 md:p-3 bg-cyan-500/30 rounded-lg backdrop-blur-sm animate-pulse delay-1000 border border-cyan-400/50">
+                      <Palette className="w-4 h-4 md:w-5 md:h-5 text-cyan-300" />
+                    </div>
+                    <div className="absolute top-1/4 -left-3 p-2 md:p-3 bg-purple-500/30 rounded-lg backdrop-blur-sm animate-pulse delay-500 border border-purple-400/50">
+                      <Zap className="w-4 h-4 md:w-5 md:h-5 text-purple-300" />
+                    </div>
+
+                    <div className="absolute top-0 left-1/2 w-px h-6 md:h-8 bg-gradient-to-b from-blue-400 to-transparent opacity-60"></div>
+                    <div className="absolute right-0 top-1/2 h-px w-6 md:w-8 bg-gradient-to-r from-blue-400 to-transparent opacity-60"></div>
+                    <div className="absolute bottom-0 left-1/4 w-px h-4 md:h-6 bg-gradient-to-t from-cyan-400 to-transparent opacity-60"></div>
                   </div>
-                  <div className="absolute -bottom-2 -left-2 p-2 md:p-3 bg-cyan-500/30 rounded-lg backdrop-blur-sm animate-pulse delay-1000 border border-cyan-400/50">
-                    <Palette className="w-4 h-4 md:w-5 md:h-5 text-cyan-300" />
-                  </div>
-                  <div className="absolute top-1/4 -left-3 p-2 md:p-3 bg-purple-500/30 rounded-lg backdrop-blur-sm animate-pulse delay-500 border border-purple-400/50">
-                    <Zap className="w-4 h-4 md:w-5 md:h-5 text-purple-300" />
-                  </div>
 
-                  <div className="absolute top-0 left-1/2 w-px h-6 md:h-8 bg-gradient-to-b from-blue-400 to-transparent opacity-60"></div>
-                  <div className="absolute right-0 top-1/2 h-px w-6 md:w-8 bg-gradient-to-r from-blue-400 to-transparent opacity-60"></div>
-                  <div className="absolute bottom-0 left-1/4 w-px h-4 md:h-6 bg-gradient-to-t from-cyan-400 to-transparent opacity-60"></div>
+                  <div className="absolute -top-4 left-1/4 px-2 py-1 bg-black/60 rounded border border-blue-400/50 backdrop-blur-sm text-xs text-blue-300 animate-pulse">
+                    React Expert
+                  </div>
+                  <div className="absolute -right-8 top-1/3 px-2 py-1 bg-black/60 rounded border border-cyan-400/50 backdrop-blur-sm text-xs text-cyan-300 animate-pulse delay-700">
+                    1+ Years
+                  </div>
+                  <div className="absolute -bottom-6 right-1/4 px-2 py-1 bg-black/60 rounded border border-purple-400/50 backdrop-blur-sm text-xs text-purple-300 animate-pulse delay-1400">
+                    Full Stack
+                  </div>
                 </div>
+              </div>
+            </div>
 
-                <div className="absolute -top-4 left-1/4 px-2 py-1 bg-black/60 rounded border border-blue-400/50 backdrop-blur-sm text-xs text-blue-300 animate-pulse">
-                  React Expert
-                </div>
-                <div className="absolute -right-8 top-1/3 px-2 py-1 bg-black/60 rounded border border-cyan-400/50 backdrop-blur-sm text-xs text-cyan-300 animate-pulse delay-700">
-                  1+ Years
-                </div>
-                <div className="absolute -bottom-6 right-1/4 px-2 py-1 bg-black/60 rounded border border-purple-400/50 backdrop-blur-sm text-xs text-purple-300 animate-pulse delay-1400">
-                  Full Stack
-                </div>
+            {/* Text Content */}
+            <div className="w-full lg:w-1/2 space-y-6 md:space-y-8 order-2 lg:order-1 text-center lg:text-left">
+              <div
+                className={`transition-all duration-1000 delay-500 ${
+                  isVisible
+                    ? "translate-x-0 opacity-100"
+                    : "-translate-x-20 opacity-0"
+                }`}
+              >
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
+                  <span className="block bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent animate-pulse">
+                    Creative
+                  </span>
+                  <span className="block text-white">Developer</span>
+                </h1>
+              </div>
+
+              <div
+                className={`transition-all duration-1000 delay-700 ${
+                  isVisible
+                    ? "translate-x-0 opacity-100"
+                    : "-translate-x-20 opacity-0"
+                }`}
+              >
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed">
+                  Crafting digital experiences through innovative web development
+                  and stunning user interfaces.
+                </p>
+              </div>
+
+              {/* Skills Tags */}
+              <div
+                className={`flex flex-wrap gap-1 sm:gap-2 md:gap-3 justify-center lg:justify-start transition-all duration-1000 delay-900 ${
+                  isVisible
+                    ? "translate-x-0 opacity-100"
+                    : "-translate-x-20 opacity-0"
+                }`}
+              >
+                {skills.map((skill, index) => (
+                  <span
+                    key={skill}
+                    className="px-3 md:px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-sm backdrop-blur-sm hover:bg-blue-500/30 transition-all duration-300 hover:scale-105"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+
+              {/* CTA Buttons */}
+              <div
+                className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start transition-all duration-1000 delay-1100 ${
+                  isVisible
+                    ? "translate-x-0 opacity-100"
+                    : "-translate-x-20 opacity-0"
+                }`}
+              >
+                <button className="group px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full font-semibold hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25">
+                  <Link to="/products">
+                    <span className="flex items-center justify-center gap-2">
+                      View My Work
+                      <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </Link>
+                </button>
+                <a
+                  href="https://drive.google.com/file/d/1abWjO1l9gsRcOj6jY_mCVB3znR5h8pia/view?usp=drive_link"
+                  download="Monty_Jha_Resume.pdf"
+                  className="inline-block"
+                >
+                  <button className="px-6 md:px-8 py-3 md:py-4 border-2 border-blue-400 rounded-full font-semibold hover:bg-blue-400 hover:text-black transition-all duration-300 transform hover:scale-105">
+                    Download CV
+                  </button>
+                </a>
+              </div>
+
+              {/* Social Links */}
+              <div
+                className={`flex gap-3 sm:gap-4 md:gap-6 justify-center lg:justify-start transition-all duration-1000 delay-1300 ${
+                  isVisible
+                    ? "translate-x-0 opacity-100"
+                    : "-translate-x-20 opacity-0"
+                }`}
+              >
+                {[
+                  { icon: Github, href: "https://github.com/Monty-jha" },
+                  {
+                    icon: Linkedin,
+                    href: "https://www.linkedin.com/in/monty-jha-1b83712bb?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bq40Cii6cTJaI0fjU9k3Jbg%3D%3D",
+                  },
+                  { icon: Mail, href: "mailto:jhamonty302@gmail.com" },
+                  {
+                    icon: Instagram,
+                    href: "https://www.instagram.com/jhamonty77?igsh=bDRkemxzNml0MDEy",
+                  },
+                ].map(({ icon: Icon, href }, index) => (
+                  <a
+                    key={index}
+                    href={href}
+                    className="p-3 border border-blue-400/30 rounded-full hover:bg-orange-400/20 hover:border-orange-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6"
+                  >
+                    <Icon className="w-5 h-5 md:w-6 md:h-6" />
+                  </a>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Text Content */}
-          <div className="w-full lg:w-1/2 space-y-6 md:space-y-8 order-2 lg:order-1 text-center lg:text-left">
-            <div
-              className={`transition-all duration-1000 delay-500 ${
-                isVisible
-                  ? "translate-x-0 opacity-100"
-                  : "-translate-x-20 opacity-0"
-              }`}
-            >
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
-                <span className="block bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent animate-pulse">
-                  Creative
-                </span>
-                <span className="block text-white">Developer</span>
-              </h1>
-            </div>
-
-            <div
-              className={`transition-all duration-1000 delay-700 ${
-                isVisible
-                  ? "translate-x-0 opacity-100"
-                  : "-translate-x-20 opacity-0"
-              }`}
-            >
-              <p className="text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed">
-                Crafting digital experiences through innovative web development
-                and stunning user interfaces.
-              </p>
-            </div>
-
-            {/* Skills Tags */}
-            <div
-              className={`flex flex-wrap gap-2 md:gap-3 justify-center lg:justify-start transition-all duration-1000 delay-900 ${
-                isVisible
-                  ? "translate-x-0 opacity-100"
-                  : "-translate-x-20 opacity-0"
-              }`}
-            >
-              {skills.map((skill, index) => (
-                <span
-                  key={skill}
-                  className="px-3 md:px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-sm backdrop-blur-sm hover:bg-blue-500/30 transition-all duration-300 hover:scale-105"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-
-            {/* CTA Buttons */}
-            <div
-              className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start transition-all duration-1000 delay-1100 ${
-                isVisible
-                  ? "translate-x-0 opacity-100"
-                  : "-translate-x-20 opacity-0"
-              }`}
-            >
-              <button className="group px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full font-semibold hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25">
-               <Link to="/products">
-                <span className="flex items-center justify-center gap-2">
-                  View My Work
-                  <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </span>
-                </Link>
-              </button>
-              <a
-                href="https://drive.google.com/file/d/1abWjO1l9gsRcOj6jY_mCVB3znR5h8pia/view?usp=drive_link"
-                download="Monty_Jha_Resume.pdf"
-                className="inline-block"
-              >
-                <button className="px-6 md:px-8 py-3 md:py-4 border-2 border-blue-400 rounded-full font-semibold hover:bg-blue-400 hover:text-black transition-all duration-300 transform hover:scale-105">
-                  Download CV
-                </button>
-              </a>
-            </div>
-
-            {/* Social Links */}
-            <div
-              className={`flex gap-4 md:gap-6 justify-center lg:justify-start transition-all duration-1000 delay-1300 ${
-                isVisible
-                  ? "translate-x-0 opacity-100"
-                  : "-translate-x-20 opacity-0"
-              }`}
-            >
-              {[
-                { icon: Github, href: "https://github.com/Monty-jha" },
-                {
-                  icon: Linkedin,
-                  href: "https://www.linkedin.com/in/monty-jha-1b83712bb?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bq40Cii6cTJaI0fjU9k3Jbg%3D%3D",
-                },
-                { icon: Mail, href: "mailto:jhamonty302@gmail.com" },
-                {
-                  icon: Instagram,
-                  href: "https://www.instagram.com/jhamonty77?igsh=bDRkemxzNml0MDEy",
-                },
-              ].map(({ icon: Icon, href }, index) => (
-                <a
-                  key={index}
-                  href={href}
-                  className="p-3 border border-blue-400/30 rounded-full hover:bg-orange-400/20 hover:border-orange-400 transition-all duration-300 transform hover:scale-110 hover:rotate-6"
-                >
-                  <Icon className="w-5 h-5 md:w-6 md:h-6" />
-                </a>
-              ))}
-            </div>
+          {/* Decorative Elements */}
+          <div className="absolute inset-0 opacity-10 pointer-events-none">
+            <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400 rounded-full animate-ping"></div>
+            <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-cyan-400 rounded-full animate-ping delay-500"></div>
+            <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-purple-400 rounded-full animate-ping delay-1000"></div>
+            <div className="absolute top-1/2 right-1/4 w-1 h-1 bg-blue-500 rounded-full animate-ping delay-1500"></div>
           </div>
+
+          <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-blue-400/30 to-transparent animate-pulse"></div>
+          <div className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent animate-pulse delay-1000"></div>
+
+          <div className="absolute top-1/4 right-10 w-px h-16 bg-gradient-to-b from-transparent via-blue-400/60 to-transparent animate-pulse"></div>
+          <div className="absolute bottom-1/4 left-10 w-px h-20 bg-gradient-to-b from-transparent via-cyan-400/60 to-transparent animate-pulse delay-1000"></div>
+
+          <div className="absolute top-10 right-10 w-4 h-4 border-t-2 border-r-2 border-blue-400/50 animate-pulse"></div>
+          <div className="absolute bottom-10 left-10 w-4 h-4 border-b-2 border-l-2 border-cyan-400/50 animate-pulse delay-500"></div>
+          <div className="absolute top-1/2 left-6 w-3 h-3 border border-purple-400/50 rotate-45 animate-pulse delay-1000"></div>
         </div>
-
-        {/* Decorative Elements */}
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400 rounded-full animate-ping"></div>
-          <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-cyan-400 rounded-full animate-ping delay-500"></div>
-          <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-purple-400 rounded-full animate-ping delay-1000"></div>
-          <div className="absolute top-1/2 right-1/4 w-1 h-1 bg-blue-500 rounded-full animate-ping delay-1500"></div>
-        </div>
-
-        <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-blue-400/30 to-transparent animate-pulse"></div>
-        <div className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent animate-pulse delay-1000"></div>
-
-        <div className="absolute top-1/4 right-10 w-px h-16 bg-gradient-to-b from-transparent via-blue-400/60 to-transparent animate-pulse"></div>
-        <div className="absolute bottom-1/4 left-10 w-px h-20 bg-gradient-to-b from-transparent via-cyan-400/60 to-transparent animate-pulse delay-1000"></div>
-
-        <div className="absolute top-10 right-10 w-4 h-4 border-t-2 border-r-2 border-blue-400/50 animate-pulse"></div>
-        <div className="absolute bottom-10 left-10 w-4 h-4 border-b-2 border-l-2 border-cyan-400/50 animate-pulse delay-500"></div>
-        <div className="absolute top-1/2 left-6 w-3 h-3 border border-purple-400/50 rotate-45 animate-pulse delay-1000"></div>
       </div>
     </>
   );

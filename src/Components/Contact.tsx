@@ -359,105 +359,103 @@ const ContactPage: React.FC = () => {
                 </div>
               ) : (
                 <div className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="group">
-                      <div className="block text-sm font-medium text-gray-300 mb-2 group-hover:text-blue-400 transition-colors">
-                        Your Name
-                      </div>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-gray-800/50 text-white rounded-lg border border-gray-700 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 backdrop-blur-sm"
-                        placeholder="John Doe"
-                      />
-                    </div>
-                    <div className="group">
-                      <div className="block text-sm font-medium text-gray-300 mb-2 group-hover:text-blue-400 transition-colors">
-                        Email Address
-                      </div>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-gray-800/50 text-white rounded-lg border border-gray-700 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 backdrop-blur-sm"
-                        placeholder="john@example.com"
-                      />
-                    </div>
+                  <div>
+                    <label className="block text-gray-300 mb-2">Name *</label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white backdrop-blur-sm"
+                      required
+                      placeholder="Enter your name"
+                      title="Your name"
+                      aria-label="Your name"
+                    />
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="group">
-                      <div className="block text-sm font-medium text-gray-300 mb-2 group-hover:text-blue-400 transition-colors">
-                        Phone Number
-                      </div>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-gray-800/50 text-white rounded-lg border border-gray-700 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 backdrop-blur-sm"
-                        placeholder="+91 9876543210"
-                      />
-                    </div>
-                    <div className="group">
-                      <div className="block text-sm font-medium text-gray-300 mb-2 group-hover:text-blue-400 transition-colors">
-                        Project Type
-                      </div>
-                      <select
-                        name="projectType"
-                        value={formData.projectType}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-gray-800/50 text-white rounded-lg border border-gray-700 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 backdrop-blur-sm"
-                        aria-label="Select project type"
-                        title="Select project type"
-                      >
-                        <option value="">Select Project Type</option>
-                        <option value="business-website">
-                          Business Website
-                        </option>
-                        <option value="ecommerce">E-commerce Store</option>
-                        <option value="web-app">Web Application</option>
-                        <option value="portfolio">Portfolio Website</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
+                  <div>
+                    <label className="block text-gray-300 mb-2">Email *</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white backdrop-blur-sm"
+                      required
+                      placeholder="Enter your email"
+                      title="Your email address"
+                      aria-label="Your email address"
+                    />
                   </div>
 
-                  <div className="group">
-                    <div className="block text-sm font-medium text-gray-300 mb-2 group-hover:text-blue-400 transition-colors">
-                      Project Budget
-                    </div>
+                  <div>
+                    <label className="block text-gray-300 mb-2">Phone (Optional)</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white backdrop-blur-sm"
+                      placeholder="Enter your phone number"
+                      title="Your phone number"
+                      aria-label="Your phone number"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-gray-300 mb-2">Project Type *</label>
+                    <select
+                      name="projectType"
+                      value={formData.projectType}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white backdrop-blur-sm"
+                      required
+                      title="Select project type"
+                      aria-label="Select project type"
+                    >
+                      <option value="">Select Project Type</option>
+                      <option value="website">Website Development</option>
+                      <option value="webapp">Web Application</option>
+                      <option value="ecommerce">E-commerce Solution</option>
+                      <option value="mobile">Mobile App Development</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-gray-300 mb-2">Budget Range *</label>
                     <select
                       name="budget"
                       value={formData.budget}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-gray-800/50 text-white rounded-lg border border-gray-700 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 backdrop-blur-sm"
-                      aria-label="Select budget range"
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white backdrop-blur-sm"
+                      required
                       title="Select budget range"
+                      aria-label="Select budget range"
                     >
                       <option value="">Select Budget Range</option>
-                      <option value="under-1000">Under $1,000</option>
-                      <option value="1000-5000">$1,000 - $5,000</option>
-                      <option value="5000-10000">$5,000 - $10,000</option>
-                      <option value="10000-plus">$10,000+</option>
-                      <option value="discuss">Let's Discuss</option>
+                      <option value="10000-25000">₹10,000 - ₹25,000</option>
+                      <option value="25000-50000">₹25,000 - ₹50,000</option>
+                      <option value="50000-100000">₹50,000 - ₹1,00,000</option>
+                      <option value="100000-150000">₹1,00,000 - ₹1,50,000</option>
+                      <option value="150000-200000">₹1,50,000 - ₹2,00,000</option>
+                      <option value="custom">Custom Budget</option>
                     </select>
                   </div>
 
-                  <div className="group">
-                    <div className="block text-sm font-medium text-gray-300 mb-2 group-hover:text-blue-400 transition-colors">
-                      Project Details
-                    </div>
+                  <div>
+                    <label className="block text-gray-300 mb-2">Message *</label>
                     <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      rows={5}
-                      className="w-full px-4 py-3 bg-gray-800/50 text-white rounded-lg border border-gray-700 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 backdrop-blur-sm"
-                      placeholder="Tell me about your project vision, features needed, timeline, and any specific requirements..."
+                      rows={4}
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white backdrop-blur-sm resize-none"
+                      required
+                      placeholder="Tell us about your project requirements..."
+                      title="Project message"
+                      aria-label="Project message"
                     ></textarea>
                   </div>
 
