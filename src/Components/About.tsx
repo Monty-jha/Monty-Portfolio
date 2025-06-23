@@ -96,7 +96,7 @@ const AboutPage: React.FC = () => {
                   <h3 className="text-2xl font-bold text-blue-300 mb-4">Who I Am</h3>
                   <p className="text-gray-300 leading-relaxed text-lg">
                     I'm <span className="text-cyan-300 font-semibold">Monty Jha</span>, a passionate and dedicated Full Stack Web Developer from Rampur, Uttar Pradesh. 
-                    Currently pursuing my Bachelor's degree in Computer Science from Teerthanker Mahaveer University, graduating in 2025.
+                    I have completed my Bachelor's degree in Computer Science from Teerthanker Mahaveer University, graduating in 2024.
                   </p>
                 </div>
 
